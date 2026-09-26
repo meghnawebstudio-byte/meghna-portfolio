@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meghna Web Studio | Kids Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#fff1f7,#fff9d9,#e9fff0);
+    color:#333;
+}
+
+/* NAVBAR */
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    padding:15px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 3px 15px rgba(0,0,0,.08);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#ff4f83;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#555;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#ff4f83;
+}
+
+/* HERO */
+header{
+    text-align:center;
+    padding:85px 20px;
+    background:linear-gradient(135deg,#ff6b93,#ffc75f,#72e89a);
+    color:white;
+}
+
+header h1{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+header p{
+    font-size:21px;
+    margin-bottom:25px;
+}
+
+.hero-button,
+.live-button,
+.contact-button{
+    display:inline-block;
+    text-decoration:none;
+    background:#ff6690;
+    color:white;
+    padding:14px 28px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.hero-button{
+    background:white;
+    color:#ff4f83;
+}
+
+.hero-button:hover,
+.live-button:hover,
+.contact-button:hover{
+    transform:translateY(-4px);
+}
+
+/* COMMON */
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:55px 20px;
+}
+
+.section-title{
+    text-align:center;
+    color:#ff4f83;
+    font-size:32px;
+    margin-bottom:30px;
+}
+
+/* ABOUT */
+.about{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.about-icon{
+    font-size:60px;
+    margin-bottom:15px;
+}
+
+.about h2{
+    color:#ff4f83;
+    margin-bottom:15px;
+}
+
+.about p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    color:#666;
+    font-size:17px;
+}
+
+/* PROJECT */
+.project{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.project h2{
+    color:#ff4f83;
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.project-description{
+    font-size:18px;
+    line-height:1.7;
+    color:#555;
+    margin-bottom:25px;
+}
+
+/* PROJECT PREVIEW */
+.preview{
+    max-width:850px;
+    margin:30px auto;
+    background:#fff;
+    border-radius:25px;
+    padding:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+.preview-top{
+    background:#ffedf4;
+    padding:10px;
+    border-radius:15px 15px 0 0;
+    text-align:left;
+    color:#ff4f83;
+    font-weight:bold;
+}
+
+.preview-screen{
+    min-height:280px;
+    border-radius:0 0 15px 15px;
+    padding:35px 20px;
+    background:linear-gradient(135deg,#fff1f7,#fff9d9,#e9fff0);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.preview-content{
+    text-align:center;
+}
+
+.preview-content .big-icon{
+    font-size:70px;
+}
+
+.preview-content h3{
+    color:#ff4f83;
+    font-size:30px;
+    margin:10px 0;
+}
+
+.preview-content p{
+    color:#666;
+    margin-bottom:18px;
+}
+
+.mini-products{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.mini-products span{
+    background:white;
+    padding:12px 18px;
+    border-radius:15px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+/* CARDS */
+.features,
+.services{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.feature,
+.service{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.feature:hover,
+.service:hover{
+    transform:translateY(-7px);
+}
+
+.icon,
+.service-icon{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.feature h4,
+.service h4{
+    color:#ff4f83;
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.feature p,
+.service p{
+    color:#666;
+    line-height:1.5;
+}
+
+/* TECH */
+.tech{
+    text-align:center;
+}
+
+.tech span{
+    display:inline-block;
+    background:white;
+    padding:13px 22px;
+    border-radius:25px;
+    margin:7px;
+    font-weight:bold;
+    box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+
+/* HIGHLIGHT */
+.highlight{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+
+.highlight p{
+    color:#666;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.highlight-list{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.highlight-list span{
+    background:#ffe2ed;
+    color:#ff4f83;
+    padding:10px 18px;
+    border-radius:20px;
+    font-weight:bold;
+}
+
+/* CONTACT */
+.contact{
+    text-align:center;
+    background:linear-gradient(135deg,#ffedf4,#fff9dc);
+    border-radius:25px;
+    padding:45px 25px;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+}
+
+.contact h2{
+    color:#ff4f83;
+    margin-bottom:12px;
+}
+
+.contact p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:35px 20px;
+    background:#ffedf4;
+}
+
+footer h2{
+    color:#ff4f83;
+    margin-bottom:8px;
+}
+
+footer p{
+    color:#666;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px;
+    }
+
+    header h1{
+        font-size:35px;
+    }
+
+    header p{
+        font-size:17px;
+    }
+
+    .project,
+    .about,
+    .highlight,
+    .contact{
+        padding:25px 18px;
+    }
+
+    .preview-screen{
+        min-height:240px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🌈 Meghna Web Studio</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#project">Project</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header id="home">
+    <h1>🌈 Meghna Web Studio 🧸</h1>
+    <p>Creative, Colorful & Kid-Friendly Website Design</p>
+
+    <a href="#project" class="hero-button">
+        ✨ Explore My Project
+    </a>
+</header>
+
+<div class="container">
+
+<section id="about">
+
+<h2 class="section-title">👩‍💻 About Me</h2>
+
+<div class="about">
+    <div class="about-icon">🧸✨</div>
+
+    <h2>Hi, I'm Meghna!</h2>
+
+    <p>
+        I enjoy creating colorful, creative and user-friendly websites.
+        My focus is on making websites attractive, simple to use and fun
+        for visitors.
+    </p>
+</div>
+
+</section>
+
+
+<section id="project">
+
+<h2 class="section-title">🛍️ My Featured Project</h2>
+
+<div class="project">
+
+    <h2>🧸 Happy Kids Store 🌈</h2>
+
+    <p class="project-description">
+        A colorful and kid-friendly shopping website designed with
+        a fun, modern and easy-to-use interface for children-focused products.
+    </p>
+
+    <!-- PROJECT PREVIEW -->
+
+    <div class="preview">
+
+        <div class="preview-top">
+            🌈 Happy Kids Store — Website Preview
+        </div>
+
+        <div class="preview-screen">
+
+            <div class="preview-content">
+
+                <div class="big-icon">🧸🌈</div>
+
+                <h3>Happy Kids Store</h3>
+
+                <p>Fun • Colorful • Kid-Friendly</p>
+
+                <div class="mini-products">
+                    <span>🧸 Teddy</span>
+                    <span>🎨 Colors</span>
+                    <span>🚗 Toy Car</span>
+                    <span>🎒 School Bag</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <a
+        href="https://meghnawebstudio-byte.github.io/kids-shopping-website/"
+        target="_blank"
+        class="live-button">
+
+        🌐 View Live Website
+
+    </a>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">✨ Website Features</h2>
+
+<div class="features">
+
+<div class="feature">
+<div class="icon">🏠</div>
+<h4>Home Page</h4>
+<p>Colorful and attractive welcome section with a kids-friendly design.</p>
+</div>
+
+<div class="feature">
+<div class="icon">🛍️</div>
+<h4>Products</h4>
+<p>Product cards with prices, discounts, search and details.</p>
+</div>
+
+<div class="feature">
+<div class="icon">🛒</div>
+<h4>Shopping Cart</h4>
+<p>Users can add products and manage quantities in the cart.</p>
+</div>
+
+<div class="feature">
+<div class="icon">💖</div>
+<h4>Wishlist</h4>
+<p>Favorite products can be saved in a separate wishlist.</p>
+</div>
+
+<div class="feature">
+<div class="icon">⭐</div>
+<h4>Reviews</h4>
+<p>Product details include a customer review section.</p>
+</div>
+
+<div class="feature">
+<div class="icon">👤</div>
+<h4>Account</h4>
+<p>Login and account creation interface for the website demo.</p>
+</div>
+
+</div>
+</section>
+
+
+<section id="services">
+
+<h2 class="section-title">🛠️ What I Can Create</h2>
+
+<div class="services">
+
+<div class="service">
+<div class="service-icon">🌐</div>
+<h4>Website Design</h4>
+<p>Modern and attractive websites for different types of projects.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">🎨</div>
+<h4>Creative UI</h4>
+<p>Colorful and engaging interfaces designed for a friendly experience.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">📱</div>
+<h4>Responsive Design</h4>
+<p>Websites designed to work smoothly on different screen sizes.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">⚡</div>
+<h4>Interactive Features</h4>
+<p>Interactive buttons, menus and useful website functionality.</p>
+</div>
+
+</div>
+</section>
+
+
+<section>
+
+<h2 class="section-title">💻 Technologies Used</h2>
+
+<div class="tech">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>GitHub Pages</span>
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">🌟 Project Highlights</h2>
+
+<div class="highlight">
+
+<p>
+Happy Kids Store combines colorful visual design with useful shopping
+features to create a fun and easy-to-use website experience.
+</p>
+
+<div class="highlight-list">
+<span>🧸 Kids Friendly</span>
+<span>🎨 Colorful UI</span>
+<span>🛒 Shopping Features</span>
+<span>💖 Wishlist</span>
+<span>⭐ Reviews</span>
+<span>📱 Responsive</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section id="contact">
+
+<h2 class="section-title">📩 Let's Create Something Amazing</h2>
+
+<div class="contact">
+
+<h2>🌈 Have a Website Idea?</h2>
+
+<p>
+I'm building my portfolio and working on creative website projects.
+</p>
+
+<a href="mailto:your-email@example.com" class="contact-button">
+💌 Contact Me
+</a>
+
+</div>
+
+</section>
+
+</div>
+
+
+<footer>
+
+<h2>🌈 Meghna Web Studio 🧸</h2>
+
+<p>Creative website design & development</p>
+
+<p style="margin-top:10px;">
+© 2026 Meghna Web Studio
+</p>
+
+</footer>
+
+</body>
+</html>
